@@ -21,24 +21,16 @@ let generateVersionHtml versionPath =
         |> str
         
     let generateIconImage (iconPath: string) =
-        div [
-            attr "style" "display: flex; flex-direction: column; align-items: center; width: 128px;"
-        ] [
-            img [
-                attr "src" iconPath
-                attr "width" "64"
-                attr "height" "64"
-                attr "style" "cursor: pointer; margin-bottom: 2em;"
-                attr "onclick" "navigator.clipboard.writeText(this.src);"
-            ]
-            span [ attr "style" "text-align: center; margin-bottom: 2em;" ] [ generateIconText iconPath ]
+        div [_class "icon"] [
+            img [_src iconPath]
+            span [] [ generateIconText iconPath ]
         ]
         
     let generateIconHtml (iconPaths: string seq) =
         iconPaths
         |> Seq.map generateIconImage
         |> Seq.toList
-        |> fun nodes -> div [attr "style" "display: flex; flex-wrap: wrap;"] nodes
+        |> fun nodes -> div [_class "icons"] nodes
         
     let generateCategoryHtml (category: string, iconPaths: string seq) =
         iconPaths
@@ -50,7 +42,10 @@ let generateVersionHtml versionPath =
         
     let generateHtmlPage content =
         html [] [
-            head [] []
+            head [] [
+                script [_src "../clipboard.js" ] []
+                tag "link" [_rel "stylesheet"; _href "../style.css"] []
+            ]
             body [] content
         ]
 

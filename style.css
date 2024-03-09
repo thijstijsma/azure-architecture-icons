@@ -1,0 +1,23 @@
+div.icons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.icon {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 128px;
+}
+
+div.icon img {
+    cursor: pointer;
+    height: 64px;
+    margin-bottom: 2em;
+    width: 64px;    
+}
+
+div.icon span {
+    margin-bottom: 2em;
+    text-align: center;
+}
