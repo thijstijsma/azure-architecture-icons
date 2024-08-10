@@ -1,6 +1,6 @@
 # Azure Architecture Icons
 
-Latest version hosted on: https://thijstijsma.github.io/azure-architecture-icons/18/
+Latest version(s) hosted on: https://thijstijsma.github.io/azure-architecture-icons/
 
 Index of Azure Architecture Icons in SVG format.
 
